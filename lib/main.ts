@@ -35,7 +35,7 @@ export async function uploadPost(postPayload: UploadingPostPayload) {
 
         const response: AxiosResponse = await axios.post("http://localhost:3000/v1/media/upload", formData);
 
-        return { error: response.data.error, message: response.data.message, data: response.data.data };
+        return { error: response.data.success, message: response.data.message, data: response.data.data };
     } catch (error: any) {
         console.error('Error uploading post:', error?.response?.data);
         console.error("Request that caused the error: ", error?.request);
